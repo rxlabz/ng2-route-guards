@@ -1,0 +1,15 @@
+<h1>
+    {{title}}
+</h1>
+
+<button (click)="login()">login</button>
+<button (click)="logout()">login</button>
+
+<p>{{user?user.name:'anonyme'}}</p>
+
+<nav>
+    <a routerLink="/home">home</a>
+    <a routerLink="/autre">autre</a>
+</nav>
+
+<router-outlet></router-outlet>
