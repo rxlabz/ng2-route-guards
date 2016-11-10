@@ -1,5 +1,18 @@
 # RouterBasics
 
+Exemple de routes protégées par identification 
+
+```javascript
+{
+    path: 'home', component: HomeScreenComponent,
+    canActivate: [CanActivateAuthProtected]
+}
+```
+
+Cf. /app/src/auth/CanActivateAuthProtected » une simple classe de vérification de droits d'accès à une route
+
+__
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
 
 ## Development server

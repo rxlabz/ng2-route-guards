@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import {AuthService, User} from "./auth.service";
-import {Router, NavigationCancel} from "@angular/router";
+import {Component} from "@angular/core";
+import {AuthService, User} from "./auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -13,13 +13,10 @@ export class AppComponent {
 
   constructor(private authService:AuthService, private router:Router){
 
-    router.events.subscribe(e=>{
-      console.log('e',e);
-      /*if( e instanceof NavigationCancel )*/
-    });
-
     authService.user$.subscribe(u=>{
       this.user = u;
+      if( u == null )
+        this.router.navigate(['/login']);
     });
   }
 

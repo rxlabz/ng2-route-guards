@@ -7,7 +7,7 @@ import {RouterBasicsRoutingModule} from "./app-routing.module";
 import {HomeScreenComponent} from './components/home-screen/home-screen.component';
 import {LoginScreenComponent} from './components/login-screen/login-screen.component';
 import {AutreScreenComponent} from './components/autre-screen/autre-screen.component';
-import {AuthService} from "./auth.service";
+import {AuthService} from "./auth/auth.service";
 import {CanActivateAuthProtected} from "./auth/can-activate-auth-protected";
 
 @NgModule({
