@@ -1,6 +1,6 @@
-# RouterBasics
+# Angular 2 Router Guards
 
-Exemple de routes protégées par identification 
+Exemple de routes protégées par identification - [voir l'exemple](https://rxlabz.github.io/ng2-route-guards/)
 
 ```javascript
 {
