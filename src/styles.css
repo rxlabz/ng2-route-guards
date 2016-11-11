@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+html,body{
+    font-family: Arial,sans-serif;
+}
+
+nav{
+    background-color: #2ce;
+}
+
+nav a{
+    color:#fff
+}
+
+nav a:hover{
+    background-color:#d60
+}

@@ -2,13 +2,16 @@
     {{title}}
 </h1>
 
-<button (click)="login()">login</button>
-<button (click)="logout()">logout</button>
+<p>Les liens 'Accueil' et 'autre' ne fonctionnent que si on s'identifie
+</p>
 
-<p>{{user?user.name:'anonyme'}}</p>
+<p>Utilisaeur actuel : {{user?user.name:'anonyme'}}
+    <button *ngIf="user != null" (click)="logout()">logout</button>
+</p>
+
 
 <nav>
-    <a routerLink="/home">home</a>
+    <a routerLink="/home">Accueil</a>
     <a routerLink="/autre">autre</a>
 </nav>
 

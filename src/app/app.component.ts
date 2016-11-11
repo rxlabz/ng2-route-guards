@@ -8,15 +8,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!!!';
+  title = 'Exemple de routes protégées';
   private user:User;
 
   constructor(private authService:AuthService, private router:Router){
 
     authService.user$.subscribe(u=>{
       this.user = u;
-      if( u == null )
-        this.router.navigate(['/login']);
+      this.router.navigate([ u ? '/home' : '/login']);
     });
   }
 
