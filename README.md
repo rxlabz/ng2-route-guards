@@ -9,7 +9,7 @@ Exemple de routes protégées par identification - [voir l'exemple](https://rxla
 }
 ```
 
-Cf. /app/src/auth/CanActivateAuthProtected » une simple classe de vérification de droits d'accès à une route
+Cf. src/app/auth/CanActivateAuthProtected » une simple classe de vérification de droits d'accès à une route
 
 __
 
