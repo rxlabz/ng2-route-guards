@@ -1,15 +1,52 @@
-# Angular 2 Router Guards
+# Angular 2 Router Guards & Resolver
 
-Exemple de routes protégées par identification - [voir l'exemple](https://rxlabz.github.io/ng2-route-guards/)
+
+## Route guards
+
+routes protégées par identification - [voir l'exemple](https://rxlabz.github.io/ng2-route-guards/)
+
+Il est possible de définir une phase de vérification avant l'ouverture / la fermeture ou le chargement d'une route.
 
 ```javascript
+
+// définition de la route
 {
     path: 'home', component: HomeScreenComponent,
     canActivate: [CanActivateAuthProtected]
+    canActivateChild: [CanActivateChildRightProtected]
+    candDeactivate: [CanCloseFormRoute],
+    candLoad: [CanLoadOtherModule],
 }
 ```
 
 Cf. src/app/auth/CanActivateAuthProtected » une simple classe de vérification de droits d'accès à une route
+
+## Route data resolver
+
+Les resolver permettent de préparer les données nécessaires à une vue durant l'ouverture d'une route.
+
+```typescript
+{
+        path: 'home', component: HomeScreenComponent,
+        canActivate: [CanActivateAuthProtected],
+        resolve:{
+            user: CurrentUserResolver
+        }
+    },
+```
+
+La classe CurrentUserResolver doit implémenter Resolve : 
+
+```typescript
+@Injectable()
+export class CurrentUserResolver implements Resolve<any>{
+    constructor(private service:AuthService) {}
+
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
+        return this.service.getUserInfos(route.params['id']) ;
+    }
+}
+```
 
 __
 
