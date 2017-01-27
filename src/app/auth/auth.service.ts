@@ -1,4 +1,5 @@
 import {Injectable, EventEmitter} from '@angular/core';
+import {User} from "../model/user";
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,7 @@ export class AuthService {
     }
 
     login() {
-        this.user = {name: 'Bob'};
+        this.user = new User('Bob', 'Dupond');
         this.user$.next(this.user);
     }
     logout() {
@@ -20,6 +21,6 @@ export class AuthService {
 
 }
 
-export class User{
+/*export class User{
     constructor(public name:string){}
-}
+}*/

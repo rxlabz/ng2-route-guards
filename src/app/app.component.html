@@ -5,7 +5,7 @@
 <p>Les liens 'Accueil' et 'autre' ne fonctionnent que si on s'identifie
 </p>
 
-<p>Utilisaeur actuel : {{user?user.name:'anonyme'}}
+<p>Utilisateur actuel : {{user? user.name:'anonyme'}}
     <button *ngIf="user != null" (click)="logout()">logout</button>
 </p>
 

@@ -9,6 +9,8 @@ import {LoginScreenComponent} from './components/login-screen/login-screen.compo
 import {AutreScreenComponent} from './components/autre-screen/autre-screen.component';
 import {AuthService} from "./auth/auth.service";
 import {CanActivateAuthProtected} from "./auth/can-activate-auth-protected";
+import {DataService} from "./data/data.service";
+import {CurrentUserResolver} from "./resolver/current-user-resolver";
 
 @NgModule({
     declarations: [
@@ -24,7 +26,7 @@ import {CanActivateAuthProtected} from "./auth/can-activate-auth-protected";
         RouterBasicsRoutingModule
     ],
     providers: [
-        AuthService, CanActivateAuthProtected
+        AuthService, CanActivateAuthProtected, DataService, CurrentUserResolver
     ],
     bootstrap: [AppComponent]
 })
